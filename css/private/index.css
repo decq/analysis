@@ -1,10 +1,11 @@
+body {
+	height: 100%;
+	overflow-y: hidden; 
+}
+
 header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
 	padding-right: 20px;
-	background-color: #222;
+	background-color: #34506a;
 	color: #dbe6ef;
 }
 
@@ -42,4 +43,91 @@ header .user_info {
 	line-height: 44px;
 	margin-left: 10px;
 	cursor: pointer;
+}
+
+.user_list {
+	border-radius: 0 0 5px 5px;
+	background-color: #34506a;
+	top: 44px;
+	right: 0;
+}
+
+.user_list .dropdown_toggle {
+	min-width: 100px;
+	text-align: right;
+}
+
+.user_list .dropdown_item a {
+	display: block;
+	line-height: 20px;
+	padding: 5px 10px;
+	font-size: 12px;
+}
+
+.wrap {
+	height: calc(100% - 44px);
+}
+
+.content {
+	padding-left: 200px;
+}
+
+.filter_box {
+	padding: 10px 15px;
+	border-bottom: 1px solid #d5d4d0;
+}
+.tag_filter {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #d5d4d0;
+}
+.tag_filter .tag_filter_tit {
+	font-size: 16px;
+}
+
+.tag_filter .icon_add {
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.tag {
+	max-width: 100px;
+	padding: 2px 20px 2px 5px;
+	margin-right: 5px;
+	background-color: #428bca;
+	line-height: 18px;
+	border-radius: 3px;
+	position: relative;
+	font-size: 12px;
+	color: #fff;
+}
+
+.tag:before,
+.tag:after {
+	content: '';
+	position: absolute;
+	right: 10px;
+	top: 6px;
+	width: 2px;
+	height: 10px;
+	background-color: #fff;
+}
+.tag:before {
+	-webkit-transform: rotate(-45deg);
+
+}
+.tag:after {
+	-webkit-transform: rotate(45deg);
+}
+
+.time_filter {
+	padding-top: 10px;
+}
+
+.time_filter input {
+	margin-right: 10px;
+}
+
+.svg_container {
+	padding: 20px 0 20px 200px;
+	text-align: center;
 }

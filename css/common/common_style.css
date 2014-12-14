@@ -39,3 +39,10 @@
 	letter-spacing: normal;
 	word-spacing: normal;
 }
+
+input {
+	padding: 3px 5px;
+	border: 1px solid #d5d4d0;
+	border-radius: 3px;
+	background-color: #fff;
+}

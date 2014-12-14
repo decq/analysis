@@ -10,6 +10,8 @@ combined files :
 ./component/icon.css
 ./component/arrow.css
 ./component/dropdown.css
+./component/crumb.css
+./component/btn.css
 */
 
 
@@ -158,16 +160,23 @@ body {
 	word-spacing: normal;
 }
 
+input {
+	padding: 3px 5px;
+	border: 1px solid #d5d4d0;
+	border-radius: 3px;
+	background-color: #fff;
+}
 
 
+
+body {
+	height: 100%;
+	overflow-y: hidden; 
+}
 
 header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
 	padding-right: 20px;
-	background-color: #222;
+	background-color: #34506a;
 	color: #dbe6ef;
 }
 
@@ -207,12 +216,129 @@ header .user_info {
 	cursor: pointer;
 }
 
+.user_list {
+	border-radius: 0 0 5px 5px;
+	background-color: #34506a;
+	top: 44px;
+	right: 0;
+}
+
+.user_list .dropdown_toggle {
+	min-width: 100px;
+	text-align: right;
+}
+
+.user_list .dropdown_item a {
+	display: block;
+	line-height: 20px;
+	padding: 5px 10px;
+	font-size: 12px;
+}
+
+.wrap {
+	height: calc(100% - 44px);
+}
+
+.content {
+	padding-left: 200px;
+}
+
+.filter_box {
+	padding: 10px 15px;
+	border-bottom: 1px solid #d5d4d0;
+}
+.tag_filter {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #d5d4d0;
+}
+.tag_filter .tag_filter_tit {
+	font-size: 16px;
+}
+
+.tag_filter .icon_add {
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.tag {
+	max-width: 100px;
+	padding: 2px 20px 2px 5px;
+	margin-right: 5px;
+	background-color: #428bca;
+	line-height: 18px;
+	border-radius: 3px;
+	position: relative;
+	font-size: 12px;
+	color: #fff;
+}
+
+.tag:before,
+.tag:after {
+	content: '';
+	position: absolute;
+	right: 10px;
+	top: 6px;
+	width: 2px;
+	height: 10px;
+	background-color: #fff;
+}
+.tag:before {
+	-webkit-transform: rotate(-45deg);
+
+}
+.tag:after {
+	-webkit-transform: rotate(45deg);
+}
+
+.time_filter {
+	padding-top: 10px;
+}
+
+.time_filter input {
+	margin-right: 10px;
+}
+
+.svg_container {
+	padding: 20px 0 20px 200px;
+	text-align: center;
+}
+
 
 
 
 .side_nav {
-	
+	float: left;
+	width: 200px;
+	height: 100%;
+	border-right: 1px solid #d5d4d0;
+	background-color: #efeeeb;
+	color: #6d6d6d;
+}
 
+.dropdown_side .dropdown_toggle {
+	display: block;
+	padding: 10px;
+	height: 20px;
+}
+
+.side_nav_item {
+	border-bottom: 1px solid #d5d4d0;
+}
+
+.dropdown_side .dropdown_list_static {
+	border-top: 1px solid #d5d4d0;
+	background-color: #f4f7fa;
+}
+
+.dropdown_side .dropdown_item {
+	padding: 5px 20px;
+	line-height: 20px;
+	cursor: pointer;
+	word-break: break-all;
+}
+
+.dropdown_side .dropdown_item:hover {
+	text-decoration: underline;
 }
 
 
@@ -248,6 +374,7 @@ header .user_info {
 	width: 200px;
 	height: 30px;
 	padding: 10px;
+	border: none;
 	border-radius: 5px;
 	box-sizing: border-box;
 }
@@ -264,7 +391,8 @@ header .user_info {
 }
 
 
-.icon_search {
+.icon_search,
+.icon_add {
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
@@ -274,7 +402,9 @@ header .user_info {
 }
 
 .icon_search:before,
-.icon_search:after {
+.icon_search:after,
+.icon_add:before,
+.icon_add:after {
 	content: '';
 	display: block;
 	position: absolute;
@@ -299,8 +429,37 @@ header .user_info {
 	right: 14px;
 }
 
+.icon_add:before {
+	width: 14px;
+	height: 3px;
+	background-color: #428bca;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+}
+.icon_add:after {
+	width: 3px;
+	height: 14px;
+	background-color: #428bca;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
 
-.arrow_default_down {
+}
+
+
+.arrow_light_down,
+.arrow_light_up,
+.arrow_light_right,
+.arrow_light_left,
+.arrow_dark_down,
+.arrow_dark_up,
+.arrow_dark_right,
+.arrow_dark_left,
+.arrow_white_down,
+.arrow_white_up,
+.arrow_white_right,
+.arrow_white_left {
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
@@ -310,43 +469,125 @@ header .user_info {
 	border: 5px solid transparent;
 	border-top: 5px solid #dbe6ef;
 }
+.arrow_light_up {
+	border: 5px solid transparent;
+	border-bottom: 5px solid #db46ef;
+}
+.arrow_light_left {
+	border: 5px solid transparent;
+	border-right: 5px solid #db46ef;
+}
+.arrow_light_right {
+	border: 5px solid transparent;
+	border-left: 5px solid #db46ef;
+}
+.arrow_dark_up {
+	border: 5px solid transparent;
+	border-bottom: 5px solid #6d6d6d;
+}
+.arrow_dark_left {
+	border: 5px solid transparent;
+	border-right: 5px solid #6d6d6d;
+}
+.arrow_dark_right {
+	border: 5px solid transparent;
+	border-left: 5px solid #6d6d6d;
+}
+.arrow_dark_down {
+	border: 5px solid transparent;
+	border-top: 5px solid #6d6d6d;
+}
+.arrow_white_up {
+	border: 5px solid transparent;
+	border-bottom: 5px solid #fff;
+}
+.arrow_white_left {
+	border: 5px solid transparent;
+	border-right: 5px solid #fff;
+}
+.arrow_white_right {
+	border: 5px solid transparent;
+	border-left: 5px solid #fff;
+}
+.arrow_white_down {
+	border: 5px solid transparent;
+	border-top: 5px solid #fff;
+}
 
 
 .dropdown {
 	position: relative;
-	/*display:none;*/
 }
 
-.dropdown_toggle {
-	min-width: 100px;
-	text-align: right;
-}
-
-.dropdown_toggle .arrow_default_down {
+.dropdown_toggle .arrow_light_down,
+.dropdown_toggle .arrow_dark_down {
 	vertical-align: -3px;
 }
-
-.dropdown:hover .dropdown_list {
-	display: block;
+.dropdown_toggle .arrow_white_up {
+	vertical-align: 3px;
+}
+.dropdown_toggle.current {
+	background-color: #e96351;
+	color: #fff;
+	position: relative;
 }
 
-.dropdown_list {
+.dropdown_toggle.current:after {
+	content: '';
+	width: 0;
+	height: 0;
+	font-size: 0;
+	border: 6px solid transparent;
+	border-left-color: #e96351;
+	position: absolute;
+	right: -12px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+}
+
+.dropdown_list,
+.dropdown_list_static {
 	display: none;
 	width: 100%;
-	border-radius: 0 0 5px 5px;
-	background-color: #222;
 	position: absolute;
-	top: 44px;
-	right: 0;
 	overflow: hidden;
 }
 
-.dropdown_list .dropdown_item:hover {
-	background-color: #666;
+.dropdown_list_static {
+	position: static;
 }
 
-.dropdown_list .dropdown_item a {
-	display: block;
-	line-height: 20px;
+.dropdown_list .dropdown_item {
+	cursor: pointer;
+}
+
+
+
+.crumb {
+	padding: 8px 15px;
+	border-bottom: 1px solid #d5d4d0;
+}
+
+.crumb .crumb_item {
+	display: inline-block;
+}
+
+.crumb .crumb_item.current {
+	color: #777;
+}
+
+.crumb .crumb_item + .crumb_item:before {
+	padding: 0 5px;
+	color: #ccc;
+	content: '/\00a0';
+}
+
+
+.btn_red {
+	display: inline-block;
 	padding: 5px 10px;
+	border-radius: 5px;
+	background-color: #e96351;
+	font-size: 14px;
+	color: #fff;
 }

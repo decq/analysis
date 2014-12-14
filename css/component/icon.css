@@ -1,4 +1,5 @@
-.icon_search {
+.icon_search,
+.icon_add {
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
@@ -8,7 +9,9 @@
 }
 
 .icon_search:before,
-.icon_search:after {
+.icon_search:after,
+.icon_add:before,
+.icon_add:after {
 	content: '';
 	display: block;
 	position: absolute;
@@ -31,4 +34,22 @@
 	-webkit-transform: rotate(-45deg);
 	top:17px;
 	right: 14px;
+}
+
+.icon_add:before {
+	width: 14px;
+	height: 3px;
+	background-color: #428bca;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+}
+.icon_add:after {
+	width: 3px;
+	height: 14px;
+	background-color: #428bca;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+
 }
