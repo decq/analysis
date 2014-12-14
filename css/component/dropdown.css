@@ -1,0 +1,38 @@
+.dropdown {
+	position: relative;
+	/*display:none;*/
+}
+
+.dropdown_toggle {
+	min-width: 100px;
+	text-align: right;
+}
+
+.dropdown_toggle .arrow_default_down {
+	vertical-align: -3px;
+}
+
+.dropdown:hover .dropdown_list {
+	display: block;
+}
+
+.dropdown_list {
+	display: none;
+	width: 100%;
+	border-radius: 0 0 5px 5px;
+	background-color: #222;
+	position: absolute;
+	top: 44px;
+	right: 0;
+	overflow: hidden;
+}
+
+.dropdown_list .dropdown_item:hover {
+	background-color: #666;
+}
+
+.dropdown_list .dropdown_item a {
+	display: block;
+	line-height: 20px;
+	padding: 5px 10px;
+}

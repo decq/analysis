@@ -1,0 +1,352 @@
+/*
+combined files : 
+
+./common/reset.css
+./common/common_style.css
+./private/index.css
+./component/side_nav.css
+./component/header_nav.css
+./component/search.css
+./component/icon.css
+./component/arrow.css
+./component/dropdown.css
+*/
+
+
+/*reset*/
+
+html,
+body,
+div,
+dl, 
+dt, 
+dd, 
+ul, 
+ol, 
+li, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+pre, 
+code, 
+form, 
+fieldset, 
+legend, 
+input, 
+textarea, 
+p, 
+blockquote, 
+th, 
+td, 
+em, 
+button { 
+	margin:0; 
+	padding:0; 
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary {
+	display:block;
+}
+
+html {
+	height: 100%;
+}
+
+img { 
+	border:0; 
+	margin:0; 
+	padding:0; 
+	vertical-align: top;
+}
+
+input,textarea,select { 
+	border:none;
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit;
+	resize:none;
+	outline:0;
+	box-shadow: none;
+	-webkit-appearance: none;
+}
+
+table { 
+	border-collapse:collapse; 
+}
+
+a { 
+	color:#6d6d6d; 
+	text-decoration:none; 
+}
+
+h1, h2, h3, h4, h5,h6 { 
+	font-weight:normal;
+}
+
+ul,li { 
+	list-style: none; 
+}
+
+dfn,em,i { 
+	font-style:normal; 
+}
+
+body { 
+	height: 100%;
+	font-size:14px; 
+	line-height:1.5; 
+	font-family: "Microsoft YaHei",Arial,Verdana,hei;
+	color: #333;
+}
+
+
+
+
+.basefix:after {
+	clear: both;
+}
+
+.basefix:before, .basefix:after {
+	content: " ";
+	display: table;
+}
+
+/*multi ellipsis*/
+.ellipsis {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.multi_ellipsis2 {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.multi_ellipsis3 {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+/*inline-block fix*/
+.ib_container {
+	font-size: 0;
+	*word-spacing: -1px;
+}
+
+.ib {
+	display:inline-block; 
+	*display:inline; 
+	*zoom:1;
+	letter-spacing: normal;
+	word-spacing: normal;
+}
+
+
+
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding-right: 20px;
+	background-color: #222;
+	color: #dbe6ef;
+}
+
+header .logo {
+	float: left;
+	width: 100px;
+	height: 44px;
+	text-align: center;
+}
+
+header .logo img {
+	width: 100%;
+	height: 100%;
+}
+
+header .header_nav {
+	float: right;
+}
+
+header .user_info {
+	float: right;
+}
+
+header a {
+	color: #dbe6ef;
+}
+
+header a:hover,
+header a :active,
+header .user_info:hover {
+	color: #fff;
+}
+
+header .user_info {
+	line-height: 44px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+
+
+
+.side_nav {
+	
+
+}
+
+
+.header_nav .nav_item {
+	float: left;
+	line-height: 44px;
+	text-align: center;
+
+}
+
+.header_nav .nav_item a {
+	display: block;
+	padding: 0 10px;
+}
+
+.header_nav .nav_item a.current {
+	box-shadow: 0 -5px #e27869;
+}
+
+.header_nav .nav_item .input_group {
+	margin-right: 10px;
+}
+
+
+
+
+
+.input_group {
+	position: relative;
+}
+
+.input_group .input_box {
+	width: 200px;
+	height: 30px;
+	padding: 10px;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+.input_group .input_box:focus {
+	
+	box-shadow: 0 0 5px #1a83cb inset;
+}
+
+.input_group .icon_search {
+	position: absolute;
+	right: 0;
+	top: 7px;
+}
+
+
+.icon_search {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	position: relative;
+	width: 30px;
+	height: 30px;
+}
+
+.icon_search:before,
+.icon_search:after {
+	content: '';
+	display: block;
+	position: absolute;
+
+}
+
+.icon_search:before {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 1px solid #666;
+	top: 8px;
+	right: 15px;
+}
+
+.icon_search:after {
+	width: 1px; 
+	height: 5px;
+	background-color: #666;
+	-webkit-transform: rotate(-45deg);
+	top:17px;
+	right: 14px;
+}
+
+
+.arrow_default_down {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 0;
+	height: 0;
+	font-size: 0;
+	border: 5px solid transparent;
+	border-top: 5px solid #dbe6ef;
+}
+
+
+.dropdown {
+	position: relative;
+	/*display:none;*/
+}
+
+.dropdown_toggle {
+	min-width: 100px;
+	text-align: right;
+}
+
+.dropdown_toggle .arrow_default_down {
+	vertical-align: -3px;
+}
+
+.dropdown:hover .dropdown_list {
+	display: block;
+}
+
+.dropdown_list {
+	display: none;
+	width: 100%;
+	border-radius: 0 0 5px 5px;
+	background-color: #222;
+	position: absolute;
+	top: 44px;
+	right: 0;
+	overflow: hidden;
+}
+
+.dropdown_list .dropdown_item:hover {
+	background-color: #666;
+}
+
+.dropdown_list .dropdown_item a {
+	display: block;
+	line-height: 20px;
+	padding: 5px 10px;
+}

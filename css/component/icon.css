@@ -1,0 +1,34 @@
+.icon_search {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	position: relative;
+	width: 30px;
+	height: 30px;
+}
+
+.icon_search:before,
+.icon_search:after {
+	content: '';
+	display: block;
+	position: absolute;
+
+}
+
+.icon_search:before {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 1px solid #666;
+	top: 8px;
+	right: 15px;
+}
+
+.icon_search:after {
+	width: 1px; 
+	height: 5px;
+	background-color: #666;
+	-webkit-transform: rotate(-45deg);
+	top:17px;
+	right: 14px;
+}

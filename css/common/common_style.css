@@ -1,0 +1,41 @@
+.basefix:after {
+	clear: both;
+}
+
+.basefix:before, .basefix:after {
+	content: " ";
+	display: table;
+}
+
+/*multi ellipsis*/
+.ellipsis {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.multi_ellipsis2 {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.multi_ellipsis3 {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+/*inline-block fix*/
+.ib_container {
+	font-size: 0;
+	*word-spacing: -1px;
+}
+
+.ib {
+	display:inline-block; 
+	*display:inline; 
+	*zoom:1;
+	letter-spacing: normal;
+	word-spacing: normal;
+}

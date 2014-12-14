@@ -1,0 +1,10 @@
+.arrow_default_down {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 0;
+	height: 0;
+	font-size: 0;
+	border: 5px solid transparent;
+	border-top: 5px solid #dbe6ef;
+}
