@@ -14,7 +14,7 @@
 	color: #fff;
 	position: relative;
 }
-
+/*
 .dropdown_toggle.current:after {
 	content: '';
 	width: 0;
@@ -26,7 +26,7 @@
 	right: -12px;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
-}
+}*/
 
 .dropdown_list,
 .dropdown_list_static {

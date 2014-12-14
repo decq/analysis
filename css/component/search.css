@@ -9,10 +9,12 @@
 	border: none;
 	border-radius: 5px;
 	box-sizing: border-box;
+	-webkit-transition: all 0.5s linear;
+	transition: all 0.5s linear;
 }
 
 .input_group .input_box:focus {
-	
+	width: 300px;
 	box-shadow: 0 0 5px #1a83cb inset;
 }
 

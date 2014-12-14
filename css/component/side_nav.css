@@ -1,10 +1,11 @@
 .side_nav {
-	float: left;
+	position: fixed;
+	overflow-y: auto;
 	width: 200px;
 	height: 100%;
 	border-right: 1px solid #d5d4d0;
 	background-color: #efeeeb;
-	color: #6d6d6d;
+	color: #6d6d6d; 
 }
 
 .dropdown_side .dropdown_toggle {
